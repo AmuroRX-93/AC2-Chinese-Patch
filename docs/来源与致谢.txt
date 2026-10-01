@@ -1,0 +1,5 @@
+﻿翻译修订依据：用户提供的 PARTS PACK (2) (1).7z，包含五份零件校译表；本次在既有中文0.2.0 True Analogs工程基础上合入。输入文件指纹见输入来源.json。
+True Analogs双摇杆代码沿用0.2.0已整合版本（VanLaser v1.64），本次可执行文件保持一致；作者及项目：https://github.com/VanLaser/analog-controls-for-armored-core-ps2 。未另行附带该项目的其他游戏补丁。
+中文字体沿用原工程思源黑体字库与渲染方案，补入两字。字体许可见LICENSE-SourceHanSans.txt。
+包内Python的来源与许可见Python来源.json和Python第三方许可目录；各组件遵循其原许可。
+游戏及原始素材版权属于各自权利人。此为非官方社区修改，不冒充官方授权，不包含完整原版游戏、BIOS或存档。

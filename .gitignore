@@ -1,0 +1,10 @@
+*.iso
+*.zip
+*.7z
+*.xdelta
+update.bin
+runtime/
+__pycache__/
+.DS_Store
+*.partial
+*.install.lock
