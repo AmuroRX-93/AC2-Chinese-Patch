@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AC2 0.2.5 original ISO installer. Python 3.8+, standard library only."""
+"""AC2 0.3.0 original ISO installer. Python 3.8+, standard library only."""
 import argparse, hashlib, json, os, shutil, sys, tempfile, errno
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
@@ -19,7 +19,7 @@ def manifest(root):
         if type(q['size']) is not int or q['size']<0: raise ValueError('非法文件大小')
         if len(q['sha256'])!=64 or any(c not in '0123456789abcdef' for c in q['sha256']): raise ValueError('非法SHA256')
     if m['source']['size']!=m['target']['size']: raise ValueError('镜像长度不一致')
-    if m['payload']['name']!='update.bin' or m['target']['name']!='AC2_CHS_0.2.5_TrueAnalogs.iso': raise ValueError('非法文件名')
+    if m['payload']['name']!='update.bin' or m['target']['name']!='AC2_CHS_0.3.0_TrueAnalogs.iso': raise ValueError('非法文件名')
     cursor=payload_cursor=0
     for r in m['spans']:
         if len(r)!=3 or any(type(v) is not int for v in r): raise ValueError('非法差分记录')
@@ -100,14 +100,14 @@ def clean_path(s):
     return s.strip('"')
 
 def main():
-    p=argparse.ArgumentParser(description='装甲核心2 日文原版 → 中文0.2.5（含双摇杆）')
+    p=argparse.ArgumentParser(description='装甲核心2 日文原版 → 中文0.3.0（含双摇杆）')
     p.add_argument('source',nargs='?',help='完整日文原版ISO')
     p.add_argument('--output',help='新ISO完整路径，不覆盖已有文件')
     p.add_argument('--check-only',action='store_true',help='只检查输入与补丁，不生成ISO')
-    p.add_argument('--verify-result',metavar='ISO',help='只校验已生成的0.2.5 ISO')
+    p.add_argument('--verify-result',metavar='ISO',help='只校验已生成的0.3.0 ISO')
     a=p.parse_args();m=manifest(ROOT)
     if a.verify_result:
-        check(Path(a.verify_result),m['target'],'0.2.5 ISO');print('0.2.5完整校验通过');return
+        check(Path(a.verify_result),m['target'],'0.3.0 ISO');print('0.3.0完整校验通过');return
     source=a.source or clean_path(input('将日文原版ISO拖到此窗口后按回车：\n'))
     if not source: raise ValueError('未选择输入')
     if a.check_only:

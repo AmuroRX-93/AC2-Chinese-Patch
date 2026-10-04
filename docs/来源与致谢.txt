@@ -1,5 +1,6 @@
-﻿翻译修订依据：用户提供的 PARTS PACK (2) (1).7z，包含五份零件校译表；本次在既有中文0.2.0 True Analogs工程基础上合入。输入文件指纹见输入来源.json。
-True Analogs双摇杆代码沿用0.2.0已整合版本（VanLaser v1.64），本次可执行文件保持一致；作者及项目：https://github.com/VanLaser/analog-controls-for-armored-core-ps2 。未另行附带该项目的其他游戏补丁。
-中文字体沿用原工程思源黑体字库与渲染方案，补入两字。字体许可见LICENSE-SourceHanSans.txt。
-包内Python的来源与许可见Python来源.json和Python第三方许可目录；各组件遵循其原许可。
-游戏及原始素材版权属于各自权利人。此为非官方社区修改，不冒充官方授权，不包含完整原版游戏、BIOS或存档。
+0.3.0任务修订依据：用户提供的《装甲核心2_任务文本_MISSION10-35_中日对照_测试版.xlsx》。采用最新测试版列，详细对应见任务文本采用清单.csv。
+此前零件校译依据PARTS PACK五份校译表，本次完整保留0.2.5内容和r1启动修复。
+True Analogs双摇杆沿用原工程整合的VanLaser v1.64。项目：https://github.com/VanLaser/analog-controls-for-armored-core-ps2 。相对r1，本次可执行文件保持一致。
+中文字体沿用原工程思源黑体字库与渲染方案，保留此前补入的“匣、霰”；0.3.0没有新增或修改字体。许可见LICENSE-SourceHanSans.txt。
+包内Python来源和许可见Python来源.json和Python第三方许可目录，各组件遵循原许可。
+游戏及原始素材权利属于各自权利人。非官方社区修改，不冒充官方授权，不含完整游戏、BIOS或个人存档。

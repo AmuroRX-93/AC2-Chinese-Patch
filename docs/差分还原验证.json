@@ -1,0 +1,20 @@
+{
+  "xdelta": {
+    "size": 961931,
+    "target_size": 4380393472,
+    "target_sha256": "7ffa17be41ae24565bb335c0548387016eea959ad2364b6a71839fcc8c8c603d",
+    "verified": true
+  },
+  "text_readback": {
+    "submitted_rows": 455,
+    "matched": 455,
+    "all_decoded_slots": 856
+  },
+  "new_gameplay_test": false,
+  "python": {
+    "bundled": "macos-arm64 Python 3.12.14",
+    "source": "Japanese original SLPS-25007",
+    "target_sha256": "7ffa17be41ae24565bb335c0548387016eea959ad2364b6a71839fcc8c8c603d",
+    "complete_synthesis": true
+  }
+}

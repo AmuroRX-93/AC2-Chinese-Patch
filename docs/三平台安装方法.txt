@@ -1,7 +1,7 @@
-﻿装甲核心2 0.2.5：电脑 / Android / PS2实机
+装甲核心2 0.3.0：电脑 / Android / PS2实机
 本页“支持路线”与“已实测”不同；验证范围见先读说明。
 统一原版：日版SLPS-25007，4380393472字节，SHA256 fa1460abc92aa89db1806235620251f9b4cdb00a825cc0fadb36342601d088bc
-统一目标：4380393472字节，SHA256 0aac1e30565e52e2d53e6f00fbbd94dc7693aa0e60641fd869fbe67a7db76666
+统一目标：4380393472字节，SHA256 7ffa17be41ae24565bb335c0548387016eea959ad2364b6a71839fcc8c8c603d
 
 A. 电脑：Windows与macOS
 1. 完整解压补丁ZIP，准备匹配原版ISO，关闭正在使用该游戏的模拟器。
@@ -18,7 +18,7 @@ B. Android手机
 3. 在你的PS2模拟器重新选择该文件/扫描目录；正常开机读取游戏内存档。
 
 方法二：只有手机，使用支持XDelta的第三方补丁工具
-1. 本包提供 AC2_JP_to_CHS_0.2.5.xdelta，标准VCDIFF，无二级压缩；不需要在手机运行Windows脚本或Python。
+1. 本包提供 AC2_JP_to_CHS_0.3.0.xdelta，标准VCDIFF，无二级压缩；不需要在手机运行Windows脚本或Python。
 2. 例如开源UniPatcher列明支持XDelta：https://github.com/btimofeev/UniPatcher 。请从可信官方项目入口获取工具。
 3. 手机准备匹配的原版ISO和本xdelta。选择原版、补丁与一个新的输出ISO位置，避免覆盖源文件。
 4. 输出本身额外需要4.38GB；某些工具会缓存输入/输出，建议另留约10GB空闲空间。不要写入FAT32卡。

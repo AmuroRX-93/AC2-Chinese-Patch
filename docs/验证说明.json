@@ -1,24 +1,19 @@
 {
-  "static-verification.json": {
-    "target_sha256": "0aac1e30565e52e2d53e6f00fbbd94dc7693aa0e60641fd869fbe67a7db76666",
-    "description_fields_roundtrip": 635,
-    "description_max_cells": 18,
-    "inherited_label_scripts_unchanged": true,
-    "script_structure_preserved": true,
-    "part_numeric_and_model_bytes_unchanged": true,
-    "old_glyphs_unchanged": true,
-    "new_glyphs": [
-      "匣",
-      "霰"
-    ],
-    "battle_fonts_unchanged": true,
-    "executable_sha256": "fd56f2be7fdd5f7a4020368fc86e0cc672fc3b4e72ad5d628c4e87132c561cd6",
-    "executable_identical_to_020_analogs": true,
-    "unmodified_iso_bytes_verified": true,
-    "runtime_verified": false,
-    "windows_runtime_verified": false
-  },
-  "installer-tests.json": {
+  "version": "0.3.0",
+  "target_sha256": "7ffa17be41ae24565bb335c0548387016eea959ad2364b6a71839fcc8c8c603d",
+  "size": 4380393472,
+  "workbook_sha256": "2cb182f635eb562442fdb57ec71788365d57c6bd45d9952511ac771607cec332",
+  "reference_rows": 455,
+  "existing_matching_rows": 449,
+  "revised_reference_rows": 6,
+  "physical_slots": 7,
+  "actual_changed_bytes": 1255,
+  "non_target_bytes_verified": true,
+  "executable_and_fonts_unchanged": true,
+  "runtime_verified": false,
+  "baseline_version": "0.2.5-r1",
+  "verification_scope": "Offline only; see reconstruction report. No new emulator launch.",
+  "installer_fixture_tests": {
     "fixture_tests": [
       "中文空格路径成功且源不变",
       "已有输出拒绝",
@@ -39,20 +34,24 @@
     "ps2_executed": false,
     "game_runtime_verified": false
   },
-  "xdelta-verification.json": {
-    "xdelta_size": 938560,
-    "xdelta_sha256": "6e6c9870695bed6b3392b37d37e326b3e7811e558d26dac577017f72b566c25b",
-    "decoded_size": 4380393472,
-    "decoded_sha256": "0aac1e30565e52e2d53e6f00fbbd94dc7693aa0e60641fd869fbe67a7db76666",
-    "mac_xdelta_stream_verified": true,
-    "android_verified": false
-  },
-  "full_real_installer": {
-    "source_sha256": "fa1460abc92aa89db1806235620251f9b4cdb00a825cc0fadb36342601d088bc",
-    "target_sha256": "0aac1e30565e52e2d53e6f00fbbd94dc7693aa0e60641fd869fbe67a7db76666",
-    "size": 4380393472,
-    "bundled_runtime": "macos-arm64 Python 3.12.14",
-    "passed": true,
-    "game_launched": false
+  "reconstruction": {
+    "xdelta": {
+      "size": 961931,
+      "target_size": 4380393472,
+      "target_sha256": "7ffa17be41ae24565bb335c0548387016eea959ad2364b6a71839fcc8c8c603d",
+      "verified": true
+    },
+    "text_readback": {
+      "submitted_rows": 455,
+      "matched": 455,
+      "all_decoded_slots": 856
+    },
+    "new_gameplay_test": false,
+    "python": {
+      "bundled": "macos-arm64 Python 3.12.14",
+      "source": "Japanese original SLPS-25007",
+      "target_sha256": "7ffa17be41ae24565bb335c0548387016eea959ad2364b6a71839fcc8c8c603d",
+      "complete_synthesis": true
+    }
   }
 }

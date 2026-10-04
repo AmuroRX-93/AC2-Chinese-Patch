@@ -1,4 +1,4 @@
-﻿装甲核心2 0.2.5：Python与双系统自动化说明
+装甲核心2 0.3.0：Python与双系统自动化说明
 
 1. 双击安装（推荐）
 完整解压后，Windows双击Windows_Install.cmd；Mac双击macOS_安装.command。
@@ -8,27 +8,27 @@
 仅Windows 64位提供内置运行时；没有承诺Windows 7、Windows ARM原生或32位系统兼容。
 
 2. Windows PowerShell命令
-在解压后的 AC2_JP_to_CHS_0.2.5 文件夹打开PowerShell。把示例路径替换为你的真实路径：
+在解压后的 AC2_JP_to_CHS_0.3.0 文件夹打开PowerShell。把示例路径替换为你的真实路径：
 
 只核对原版和补丁：
 & '.\runtime\windows-x64\python.exe' -I '.\install.py' 'D:\Games\Armored Core 2 (Japan).iso' --check-only
 
 指定输出位置（父文件夹必须事先存在）：
-& '.\runtime\windows-x64\python.exe' -I '.\install.py' 'D:\Games\Armored Core 2 (Japan).iso' --output 'D:\Games\AC2_CHS_0.2.5_TrueAnalogs.iso'
+& '.\runtime\windows-x64\python.exe' -I '.\install.py' 'D:\Games\Armored Core 2 (Japan).iso' --output 'D:\Games\AC2_CHS_0.3.0_TrueAnalogs.iso'
 
 只核对已经生成的结果：
-& '.\runtime\windows-x64\python.exe' -I '.\install.py' --verify-result 'D:\Games\AC2_CHS_0.2.5_TrueAnalogs.iso'
+& '.\runtime\windows-x64\python.exe' -I '.\install.py' --verify-result 'D:\Games\AC2_CHS_0.3.0_TrueAnalogs.iso'
 
 独立计算任意文件的SHA256：
-Get-FileHash -Algorithm SHA256 -LiteralPath 'D:\Games\AC2_CHS_0.2.5_TrueAnalogs.iso' | Format-List
+Get-FileHash -Algorithm SHA256 -LiteralPath 'D:\Games\AC2_CHS_0.3.0_TrueAnalogs.iso' | Format-List
 
 3. macOS终端命令
 先输入cd加空格，拖入解压后的补丁文件夹并回车。Apple Silicon示例：
 
 ./runtime/macos-arm64/python/bin/python3 -I ./install.py '/完整路径/Armored Core 2 (Japan).iso' --check-only
-./runtime/macos-arm64/python/bin/python3 -I ./install.py '/完整路径/Armored Core 2 (Japan).iso' --output '/完整路径/AC2_CHS_0.2.5_TrueAnalogs.iso'
-./runtime/macos-arm64/python/bin/python3 -I ./install.py --verify-result '/完整路径/AC2_CHS_0.2.5_TrueAnalogs.iso'
-shasum -a 256 '/完整路径/AC2_CHS_0.2.5_TrueAnalogs.iso'
+./runtime/macos-arm64/python/bin/python3 -I ./install.py '/完整路径/Armored Core 2 (Japan).iso' --output '/完整路径/AC2_CHS_0.3.0_TrueAnalogs.iso'
+./runtime/macos-arm64/python/bin/python3 -I ./install.py --verify-result '/完整路径/AC2_CHS_0.3.0_TrueAnalogs.iso'
+shasum -a 256 '/完整路径/AC2_CHS_0.3.0_TrueAnalogs.iso'
 
 Intel Mac把macos-arm64替换为macos-x64。自动启动器会根据uname -m选择，不强制使用转译。
 如果解压工具丢失执行权限，仅恢复相关文件的权限：
@@ -51,6 +51,6 @@ Windows自动窗口结尾有暂停；如果失败，把完整报错、原版大�
 
 6. 包内文件
 install.py + manifest.json + update.bin：桌面Python合成路线，来源/载荷/目标三重SHA校验。
-AC2_JP_to_CHS_0.2.5.xdelta：另一种标准VCDIFF差分，供兼容工具使用，目标完全相同。两条路线择一，不要依次重复打补丁。
+AC2_JP_to_CHS_0.3.0.xdelta：另一种标准VCDIFF差分，供兼容工具使用，目标完全相同。两条路线择一，不要依次重复打补丁。
 runtime与Python第三方许可：随包的解释器及许可。来源见Python来源.json。
 SHA256SUMS.txt：包内文件校验清单。用于完整性核对，不等于数字签名或官方授权。

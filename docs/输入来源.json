@@ -1,32 +1,10 @@
-[
-  {
-    "name": "PARTS PACK (2) (1).7z",
-    "size": 68446,
-    "sha256": "3c278984717fd3826454a185b7010ca0053816425e29d70f0f1e9a1b683fc648"
-  },
-  {
-    "name": "AC2_五类零件日文原文校对表_20260929 (1).xlsx",
-    "size": 27371,
-    "sha256": "5dca421d0506085d0d605dbf859669c4c6db5aaa30be393ee9123e30fd430e95"
-  },
-  {
-    "name": "装甲核心2_腿部单_汉化比对表.xlsx",
-    "size": 18985,
-    "sha256": "216609613e48f5c026c5f55c4a59d62204088fc5ad9d4a3317b5fe38926d4f31"
-  },
-  {
-    "name": "装甲核心2_核心单_汉化比对表.xlsx",
-    "size": 12621,
-    "sha256": "bdebb99215e763523d5b32d4919fd1f2897d75bdbedda23536dbdd37be2e3f38"
-  },
-  {
-    "name": "装甲核心2_头部单_汉化比对表1.xlsx",
-    "size": 15236,
-    "sha256": "963274fd3e4125e88bd09d8f7d685d441d3e8c03453196fbb63338a5742cdec8"
-  },
-  {
-    "name": "装甲核心2_手部单_汉化比对表.xlsx",
-    "size": 15874,
-    "sha256": "fb4b18db0c8fbe76b571384ba98735790e9f5977981506ab1a42669bf99fae42"
-  }
-]
+{
+  "workbook": "装甲核心2_任务文本_MISSION10-35_中日对照_测试版.xlsx",
+  "sha256": "2cb182f635eb562442fdb57ec71788365d57c6bd45d9952511ac771607cec332",
+  "column_priority": [
+    "内容（测试版）",
+    "内容"
+  ],
+  "preserved_parts": "0.2.5 PARTS PACK proofreading",
+  "baseline": "0.2.5-r1"
+}
