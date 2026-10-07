@@ -1,3 +1,11 @@
+<!-- latest-release-20261007 -->
+## 最新正式发布（2026-10-07）
+
+[AC2 中文 0.3.1 正式版](https://github.com/AmuroRX-93/AC2-Chinese-Patch/releases/tag/v0.3.1)
+
+从日文原版累计安装，包含双摇杆、竞技场与零件校对修订、41个新增字形。已通过包内 macOS ARM64 Python 从原版完整还原，目标 SHA256 为 22c6d66d43ee860e5cd48e934c3a7e11ba3e908f0021badba3f1961aa21d7f4e。文本与字库已静态读回核验；尚未进行本轮游戏内验证，语音/影片与未编号任务不是本次完整校对范围。
+<!-- /latest-release-20261007 -->
+
 # 装甲核心2 中文版 0.3.0 · 任务文本修订 / True Analogs
 
 适用 PS2 日版 **SLPS-25007**。这是**日文原版 → 0.3.0 累计差分**，继承0.2.5零件校译、r1启动修复和既有True Analogs双摇杆修改。
