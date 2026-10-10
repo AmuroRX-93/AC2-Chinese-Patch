@@ -1,6 +1,6 @@
-0.3.0任务修订依据：用户提供的《装甲核心2_任务文本_MISSION10-35_中日对照_测试版.xlsx》。采用最新测试版列，详细对应见任务文本采用清单.csv。
-此前零件校译依据PARTS PACK五份校译表，本次完整保留0.2.5内容和r1启动修复。
-True Analogs双摇杆沿用原工程整合的VanLaser v1.64。项目：https://github.com/VanLaser/analog-controls-for-armored-core-ps2 。相对r1，本次可执行文件保持一致。
-中文字体沿用原工程思源黑体字库与渲染方案，保留此前补入的“匣、霰”；0.3.0没有新增或修改字体。许可见LICENSE-SourceHanSans.txt。
-包内Python来源和许可见Python来源.json和Python第三方许可目录，各组件遵循原许可。
-游戏及原始素材权利属于各自权利人。非官方社区修改，不冒充官方授权，不含完整游戏、BIOS或个人存档。
+沿用既有AC2汉化工程、用户历次校译及PARTS PACK零件说明修订。本版邮件、两条简报和一句对白采用本次用户返稿及其明确授权修正；原署名与来源沿用，不将回填称为独立重新翻译全部游戏。
+True Analogs：VanLaser项目 https://github.com/VanLaser/analog-controls-for-armored-core-ps2 ，原工程整合v1.64；本轮可执行文件与0.3.1完全一致。
+字体：思源黑体 Source Han Sans SC，许可见licenses/LICENSE-SourceHanSans.txt；新增17字形，保持旧字形与映射。
+Python：Windows CPython嵌入版及python-build-standalone，来源/版本/下载摘要/加工说明见Python来源.json；许可保留在runtime和licenses目录。
+XDelta仅作为格式兼容的另一份差分，标准补丁已离线全量还原验证；手机应用另从其官方渠道获取，未夹带第三方APK。
+游戏及原始素材权利属于各自权利人。非官方、无偿社区修改，差分不含完整游戏、BIOS或个人存档。

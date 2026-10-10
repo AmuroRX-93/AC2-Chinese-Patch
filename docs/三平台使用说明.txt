@@ -1,0 +1,26 @@
+PC、Android 和 PS2 实机使用说明
+本游戏是PS2日版SLPS-25007。先得到通过校验的0.3.2 ISO，运行内容相同，各平台入口不同。
+
+PC
+完整解压本包，用对应系统入口生成ISO，再在你已配置好的PS2模拟器中添加ISO所在目录并重新扫描。
+选择新版ISO冷启动，记忆卡继续沿用；本包不包含模拟器/BIOS，不替换手柄或私人配置。
+
+Android 有电脑
+在电脑完成修补和SHA256校验；把完整ISO传到手机可访问的游戏目录；让你现有PS2模拟器通过系统文件选择器添加该目录，再扫描启动。
+按键和性能按你原来已能运行日文版的配置使用。桌面runtime不能放到安卓当解释器运行。
+
+Android 只有手机
+本包 standard-xdelta/AC2_JP_to_CHS_0.3.2.xdelta 是标准VCDIFF补丁，仅用于匹配日文原版ISO。
+可用明确支持XDelta的现成修补器选择三个位置：原版ISO、上述.xdelta、新输出ISO。UniPatcher官方项目说明支持XDelta：https://github.com/btimofeev/UniPatcher 。这仅说明格式能力，没有本项目对4.38GB ISO的手机安装测试；工具的版本、文件选择权限、空间和大文件限制仍需确认。
+完成后核对输出SHA256：3ba0d0b7df775738df95fdb641ebf4ec74aae5e8031384da07890bc519787f12 。不能因显示“完成”便省去校验。
+无法处理大文件时，使用电脑合成再传入，或使用已验证的完整汉化镜像。不要用ZIP、update.bin或manifest.json直接当游戏导入。
+本包没有要求使用旧的自制Android更新APK。
+
+PS2 实机
+先合成并校验ISO，保留原版/旧版及记忆卡或VMC。再按已配置好的OPL和介质方式安装。
+USB/MX4SIO：用明确支持exFAT的OPL版本时，可把ISO放入其DVD目录；具体命名按你的OPL设置。例如 SLPS_250.07.AC2_CHS_0.3.2.iso。
+FAT32：本ISO超过4GiB，不能直接复制。需用你已验证的USBExtreme工具转换（如OPLUtil/USBUtil），普通文件切片或7z分卷不等同USBExtreme格式。
+SMB：按已有共享目录的DVD结构部署完整ISO；修改版本只替换对应游戏，不删除VMC、CFG或其他游戏。
+内置HDD：按已有APA/HDLoader安装流程和工具导入；不能把ZIP当作HDD游戏包。
+OPL官方说明支持介质和大文件方式：https://github.com/ps2homebrew/Open-PS2-Loader 。其README在2026-10-10核查说明USB/MX4SIO/iLink的exFAT从v1.2.0 beta rev1880支持，FAT32超过4GB用USBExtreme。须核对自己实际版本，不为汉化盲目格式化现有盘。
+本版尚未进行PS2硬件或Android游戏内验证。也不把PS2 ISO当作PS3/PSP原生游戏。

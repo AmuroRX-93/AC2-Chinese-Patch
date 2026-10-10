@@ -1,0 +1,37 @@
+命令与排错
+所有例子都在完整解压后的 AC2_JP_to_CHS_0.3.2 文件夹执行。
+路径要保留引号；尖括号示例路径请换成你的真实路径，不要原样输入。
+
+Windows PowerShell（x64；ARM64把windows-x64换windows-arm64）
+.\runtime\windows-x64\python.exe -B -X utf8 .\install.py "D:\Games\Armored Core 2 (Japan).iso" --output "D:\Games\AC2_CHS_0.3.2_TrueAnalogs.iso"
+.\runtime\windows-x64\python.exe -B -X utf8 .\install.py "D:\Games\Armored Core 2 (Japan).iso" --check-only
+.\runtime\windows-x64\python.exe -B -X utf8 .\install.py --verify-result "D:\Games\AC2_CHS_0.3.2_TrueAnalogs.iso"
+.\runtime\windows-x64\python.exe -B -X utf8 .\tools\check_package.py
+.\runtime\windows-x64\python.exe -B -X utf8 .\tools\identify_iso.py "D:\Games\Armored Core 2 (Japan).iso"
+
+macOS / Linux（run.sh会识别本机系统及架构）
+sh run.sh "/path/to/Armored Core 2 (Japan).iso" --output "/path/to/AC2_CHS_0.3.2_TrueAnalogs.iso"
+sh run.sh "/path/to/Armored Core 2 (Japan).iso" --check-only
+sh run.sh --verify-result "/path/to/AC2_CHS_0.3.2_TrueAnalogs.iso"
+sh run.sh --help
+Mac若双击入口提示权限，可在终端运行：sh macOS_安装.command
+不要关闭系统安全功能。若下载文件需正常打开授权，使用系统提供的打开入口。
+
+运行环境
+推荐64位Windows 10/11、现代macOS及glibc Linux。Linux包不是Alpine/musl或Android解释器。
+包内Python只使用标准库，不需要pip。每种架构的版本与来源见 Python来源.json；所列未实跑平台需要自行确认操作系统兼容性。
+
+空间
+先将ZIP完整解压。输出磁盘另留至少6GB；原版和生成镜像各约4.38GB。
+不能直接在FAT32生成完整ISO。不要因为手机7z能解压，就认为输出大文件一定能保存。
+
+常见问题
+“Bundled Python is missing”：没有完整解压，或者只拿了某个脚本。入口与runtime目录应在同一根文件夹。
+“Press any key”：只是窗口末尾，请看上面的首个错误。Python异常详细记录在logs目录。
+“SHA256不匹配”：原版不一致或压缩包未解压；不能强行跳过检查。菜单4可帮助识别旧汉化。
+“输出已存在”：换输出路径，或者先由你自己确认旧文件是否需要保留；工具不会覆盖。
+“Permission denied”：确认目录有写权限；macOS/Linux可以用sh运行入口，但Python仍需执行权限，入口会尝试只给该解释器加执行位。
+Linux提示缺少动态库/无法执行：核对架构与glibc发行版；未实跑的环境不要认为已通过。
+中文异常或乱码：先保留首个错误和日志。不要盲改所有文件编码，也不要在压缩软件内部直接运行。
+合成中断：临时输出会尽量清理，完整原版不改；异常崩溃留下.partial或.install.lock时，先确认没有安装进程，之后再手动处理这些临时文件。
+运行前关掉旧游戏实例再选择新ISO，用游戏内存档恢复。旧即时状态会携带旧代码和字库。

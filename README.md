@@ -1,60 +1,50 @@
-<!-- latest-release-20261007 -->
-## 最新正式发布（2026-10-07）
+# 装甲核心2 中文 0.3.2
 
-[AC2 中文 0.3.1 正式版](https://github.com/AmuroRX-93/AC2-Chinese-Patch/releases/tag/v0.3.1)
+PS2 日版 **SLPS-25007** 的累计汉化差分，保留既有启动修复、True Analogs 双摇杆、任务、竞技场与零件校订。
 
-从日文原版累计安装，包含双摇杆、竞技场与零件校对修订、41个新增字形。已通过包内 macOS ARM64 Python 从原版完整还原，目标 SHA256 为 22c6d66d43ee860e5cd48e934c3a7e11ba3e908f0021badba3f1961aa21d7f4e。文本与字库已静态读回核验；尚未进行本轮游戏内验证，语音/影片与未编号任务不是本次完整校对范围。
-<!-- /latest-release-20261007 -->
+**[下载 0.3.2 正式版](https://github.com/AmuroRX-93/AC2-Chinese-Patch/releases/tag/v0.3.2)**，选择附件 `AC2_JP_to_CHS_0.3.2_AllPlatforms_Delta.zip`。GitHub 自动生成的 Source code 压缩包不含差分载荷与便携 Python，不能直接安装。
 
-# 装甲核心2 中文版 0.3.0 · 任务文本修订 / True Analogs
+## 本次修订
 
-适用 PS2 日版 **SLPS-25007**。这是**日文原版 → 0.3.0 累计差分**，继承0.2.5零件校译、r1启动修复和既有True Analogs双摇杆修改。
+84 条返表修订写入 85 个物理位置：60 封邮件正文、7 个邮件标题、14 个发件人、2 条任务简报，以及有两份资源副本的 1 句战斗对白。按作者授权修正手误与四项待核对内容，保留“泰拉做成”“九球破坏者”“翡翠社”等指定译名。新增 17 个菜单字形，旧字形和字码映射保持一致。
 
-[下载0.3.0](https://github.com/AmuroRX-93/AC2-Chinese-Patch/releases/tag/v0.3.0)
+邮件按每行 22 字位、每页 5 行排版；两条简报沿用 23 字位、4 行及原控制码／事件页。历史校订、启动修复和双摇杆程序保留；本次没有用空修订栏推断未校对，也不宣称全游戏终审。
 
-下载附件 **AC2_JP_to_CHS_0.3.0_Delta.zip**（92,713,578字节，约93MB），不要用GitHub自动生成的Source code压缩包安装。差分数据与Python运行环境在Release附件中。
+## 怎么安装
 
-## 更新内容
+完整解压，准备匹配的日文原版 ISO。
 
-采用MISSION10–35中日对照测试表的最新测试版列。455条有原文记录全部对照：449条在r1中已有等效译文，实际修订6条、对应7处文本槽位。保留原分页和控制码，修改页面按既有行宽重排。
+- **Windows x64／ARM64**：双击 `Windows_安装.cmd`。
+- **macOS Apple 芯片／Intel**：双击 `macOS_安装.command`，或终端运行 `sh run.sh`。
+- **Linux x64／ARM64**：终端运行 `sh run.sh`。附 glibc 运行时，Alpine/musl 不在其适用范围。
 
-相对r1，可执行文件和字体完全不变；相对公开0.2.5，包含此前r1的启动死循环修复。本版不改零件数值，不宣称全游戏文本已完美校译。逐条采用和修订清单随包。
+菜单选 1，输入原版 ISO 路径及输出位置，等待合成和完整校验。包内已附 6 种架构的 Python、脚本、版本识别和包校验工具、离线 HTML／文本说明及许可；无需安装 Python 或 pip。
 
-## Windows / macOS 使用
+生成 `AC2_CHS_0.3.2_TrueAnalogs.iso` 后重新选择它冷启动，可沿用记忆卡内存档；避免读取旧即时状态。旧汉化用户也用保留的日文原版重新生成，本包不直接覆写旧镜像。输出存在时拒绝覆盖。
 
-1. 完整解压ZIP，准备校验匹配的日文原版ISO。
-2. Windows x64双击`Windows_Install.cmd`；Apple Silicon或Intel Mac双击`macOS_安装.command`。
-3. 拖入原版ISO按回车，等待完整合成和校验。**已附对应平台Python，无需额外安装Python或pip，不联网。**
-4. 在模拟器中选择`AC2_CHS_0.3.0_TrueAnalogs.iso`正常开机，沿用记忆卡内存档；不要恢复旧版即时状态。
+详细命令、升级、回退和错误日志说明见[命令与排错](docs/命令与排错.txt)，快速操作见[先读说明](docs/先读说明.txt)，也随 Release 附件提供。
 
-已有0.2.x/r1也用原版重新合成。本包不能直接套旧汉化、其他地区、CHD或压缩包。不改输入ISO、记忆卡、模拟器配置，不自动启动游戏；已有输出拒绝覆盖。建议输出盘另留6GB空间，不能使用FAT32。
+## Android 与 PS2
 
-详细PowerShell/终端命令、故障排查见[Python使用说明](docs/Python使用说明.txt)，安装步骤见[先读说明](docs/先读说明.txt)。这些文档亦在ZIP内。
+电脑生成的同一 ISO 可传入 Android 模拟器，或按已有 OPL／介质方式安装到 PS2。只使用手机的玩家，可尝试包内不使用二次压缩的标准 XDelta 补丁与兼容工具。UniPatcher 的[官方说明](https://github.com/btimofeev/UniPatcher)列出 XDelta 支持，但本项目没有其处理本版 4.38GB ISO 的手机实测；文件权限、大文件能力和空间需确认。
 
-## 校验值
+ISO 超过 FAT32 单文件上限。OPL 介质、exFAT、USBExtreme 或 SMB 部署按[官方说明](https://github.com/ps2homebrew/Open-PS2-Loader)及自己的实际版本选择。步骤、SHA256 和回退方式见[三平台使用说明](docs/三平台使用说明.txt)。本包不夹带第三方手机 APK、模拟器、BIOS、固件或个人存档。
 
-输入和输出均为4,380,393,472字节。
+## 校验与验证范围
 
-| 文件 | SHA256 |
+输入、输出均为 **4,380,393,472 字节**。
+
+| 内容 | SHA256 |
 |---|---|
 | 日文原版输入 | `fa1460abc92aa89db1806235620251f9b4cdb00a825cc0fadb36342601d088bc` |
-| 0.3.0输出ISO | `7ffa17be41ae24565bb335c0548387016eea959ad2364b6a71839fcc8c8c603d` |
-| 发布ZIP | `4cc0ae8219aeb574fdefca17acf95200a9a68f269118f7759558cc7ccd65b2d5` |
+| 中文 0.3.2 输出 | `3ba0d0b7df775738df95fdb641ebf4ec74aae5e8031384da07890bc519787f12` |
 
-## 手机和实机路线
+已验证文本独立回读、字形／容量／控制码／分页及非目标字节保持；包内 macOS ARM64 Python 从完整原版重建一致，中文／空格路径及 13 项安装保护检查通过。标准 XDelta 从原版全量重建一致，最终 ZIP 每个文件完整读回与 SHA256 匹配；6 种运行时的架构、入口、标准库、许可已静态检查。
 
-电脑合成后可将ISO传到Android，再让模拟器扫描；只有手机可尝试包内标准xdelta与兼容工具，大文件限制需自行确认。本包不兼容旧L10N Android更新器。PS2实机需先合成ISO，再按已有OPL及介质版本规则安装，FAT32不能直接复制完整ISO。详见[三平台安装方法](docs/三平台安装方法.txt)。没有本版本手机/实机运行验收。
-
-## 验证范围与已知限制
-
-已验证：455条译表记录实际ISO回读匹配、7处变化容量/控制码/分页检查、全部非目标字节不变；Apple Silicon包内Python从完整原版合成成功，XDelta全量还原一致；11项安装器成功/拒绝/中断检查；ZIP每条目CRC与SHA验证。
-
-**本轮0.3.0未启动游戏。** r1此前通过标题/菜单检查，不等于0.3.0全关卡测试。配色卡死反馈仍未完成复现验收，本版不宣称解决。Windows、Intel Mac、Android和PS2实机未执行本版本测试。
-
-True Analogs沿用既有第1手柄与回放等限制，不提供关闭开关，不要重复叠加其他双摇杆补丁。
+**本版未启动游戏；Windows、Intel Mac、Linux、Android、PS2 尚未实跑。** “全平台”指运行内容及便利入口覆盖，不表示所有设备已通过游戏内验收。既有配色／卡死等反馈不由本次文本回填宣称根治。具体证据见[验证说明](docs/验证说明.json)。
 
 ## 来源与许可
 
-本次使用用户提供的任务校译表，沿用既有汉化工程及PARTS PACK零件修订。双摇杆源自[VanLaser True Analogs](https://github.com/VanLaser/analog-controls-for-armored-core-ps2)，字体沿用思源黑体；许可与Python来源随包。
+沿用既有社区汉化和用户历次校译、PARTS PACK 零件说明。True Analogs 源自 [VanLaser 项目](https://github.com/VanLaser/analog-controls-for-armored-core-ps2)，本轮程序与 0.3.1 一致。字体为思源黑体；便携 Python 来源与第三方许可随包保留。参见[来源与致谢](docs/来源与致谢.txt)。
 
-无偿、非官方社区修改，不含完整游戏、BIOS或个人存档。差分包含修改后的局部资源字节，请自行合法准备原版，不冒充官方或收费贩售。
+非官方、无偿社区修改；完整游戏仅由玩家自行准备。本仓库保留历史版本资料，最新安装请使用上方 0.3.2 Release 附件。
