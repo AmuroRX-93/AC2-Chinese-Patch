@@ -1,0 +1,82 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>AC2 0.3.2-fix.1 使用说明</title><style>body{max-width:900px;margin:40px auto;padding:20px;font:18px/1.65 sans-serif}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>装甲核心2 0.3.2-fix.1</h1><pre>装甲核心2 中文 0.3.2-fix.1 · 累计修订版（2026-10-12）
+PS2 日版 SLPS-25007；仅支持匹配日文原版ISO直升。
+
+包含0.3.2全部累计汉化与True Analogs双摇杆；新增奖励金额提示、名称输入中的汉字/符号标签修正，以及PROLOGJ、PROLOGE、ENDINGJ、ENDINGE、OVER五段剧情影片中文字幕和音频预缓冲封装调整。
+标题界面与TITLE.PSS按要求保留原版；职员名单不汉化。
+本版不含“细线修复”。已撤销全纹理偏移实验，不修改模拟器配置。原版也出现的细线尚未解决。
+
+差分包：完整解压AC2_JP_to_CHS_0.3.2-fix.1_AllPlatforms_Delta.zip，Windows双击Windows_安装.cmd，Mac双击macOS_安装.command，Linux运行sh run.sh。菜单1选择原版ISO，生成的新文件默认在原版旁边；完成时会打印完整输出路径。包内附六架构Python，不需另装Python或pip。
+整合包：完整解压AC2_CHS_0.3.2-fix.1_AllPlatforms_Full.7z，直接添加根目录ISO运行，不用再打补丁；维护工具用于校验或从原版重新生成。
+PC、安卓和PS2实机共用同一个生成ISO；安卓仅手机修补可用包内标准XDelta配合支持大文件的修补器。PS2按已有OPL/介质部署。详细步骤、命令、回退见三平台使用说明.txt与命令与排错.txt。
+
+输入SHA256：fa1460abc92aa89db1806235620251f9b4cdb00a825cc0fadb36342601d088bc
+输出SHA256：2a59f11c08856f3c905c6af536f661823497ebc9fac636d37a4582efe9b65b25
+输入/输出大小均4,380,393,472字节，超过FAT32单文件上限。
+旧汉化版本请用保留的日文原版重新生成；不得把旧汉化ISO当作输入。工具不覆写已有输出、不改原版或记忆卡。回退直接选择保留的旧ISO。冷启动后读记忆卡，不恢复旧即时状态。不要再次叠加双摇杆补丁。
+
+验证边界：包内Mac ARM64 Python和标准XDelta均从完整原版重建到同一目标SHA256，13项安装保护检查通过；用户已反馈当前游戏能进入设置界面。五段剧情影片的全部播放/跳过/转场尚未逐一验收；不宣称全剧情已测或黑屏彻底根治。Windows、Intel Mac、Linux、Android和PS2实机未实跑。六架构工具随包提供不等于各设备游戏运行已通过。
+不含模拟器、BIOS、固件、私人配置或个人存档；无解压密码。
+</pre><h2>命令与排错</h2><pre>命令与排错
+所有例子都在完整解压后的 AC2_JP_to_CHS_0.3.2-fix.1 文件夹执行。
+路径要保留引号；尖括号示例路径请换成你的真实路径，不要原样输入。
+
+Windows PowerShell（x64；ARM64把windows-x64换windows-arm64）
+.\runtime\windows-x64\python.exe -B -X utf8 .\install.py &quot;D:\Games\Armored Core 2 (Japan).iso&quot; --output &quot;D:\Games\AC2_CHS_0.3.2-fix.1_TrueAnalogs.iso&quot;
+.\runtime\windows-x64\python.exe -B -X utf8 .\install.py &quot;D:\Games\Armored Core 2 (Japan).iso&quot; --check-only
+.\runtime\windows-x64\python.exe -B -X utf8 .\install.py --verify-result &quot;D:\Games\AC2_CHS_0.3.2-fix.1_TrueAnalogs.iso&quot;
+.\runtime\windows-x64\python.exe -B -X utf8 .\tools\check_package.py
+.\runtime\windows-x64\python.exe -B -X utf8 .\tools\identify_iso.py &quot;D:\Games\Armored Core 2 (Japan).iso&quot;
+
+macOS / Linux（run.sh会识别本机系统及架构）
+sh run.sh &quot;/path/to/Armored Core 2 (Japan).iso&quot; --output &quot;/path/to/AC2_CHS_0.3.2-fix.1_TrueAnalogs.iso&quot;
+sh run.sh &quot;/path/to/Armored Core 2 (Japan).iso&quot; --check-only
+sh run.sh --verify-result &quot;/path/to/AC2_CHS_0.3.2-fix.1_TrueAnalogs.iso&quot;
+sh run.sh --help
+Mac若双击入口提示权限，可在终端运行：sh macOS_安装.command
+不要关闭系统安全功能。若下载文件需正常打开授权，使用系统提供的打开入口。
+
+运行环境
+推荐64位Windows 10/11、现代macOS及glibc Linux。Linux包不是Alpine/musl或Android解释器。
+包内Python只使用标准库，不需要pip。每种架构的版本与来源见 Python来源.json；所列未实跑平台需要自行确认操作系统兼容性。
+
+空间
+先将ZIP完整解压。输出磁盘另留至少6GB；原版和生成镜像各约4.38GB。
+不能直接在FAT32生成完整ISO。不要因为手机7z能解压，就认为输出大文件一定能保存。
+
+常见问题
+“Bundled Python is missing”：没有完整解压，或者只拿了某个脚本。入口与runtime目录应在同一根文件夹。
+“Press any key”：只是窗口末尾，请看上面的首个错误。Python异常详细记录在logs目录。
+“SHA256不匹配”：原版不一致或压缩包未解压；不能强行跳过检查。菜单4可帮助识别旧汉化。
+“输出已存在”：换输出路径，或者先由你自己确认旧文件是否需要保留；工具不会覆盖。
+“Permission denied”：确认目录有写权限；macOS/Linux可以用sh运行入口，但Python仍需执行权限，入口会尝试只给该解释器加执行位。
+Linux提示缺少动态库/无法执行：核对架构与glibc发行版；未实跑的环境不要认为已通过。
+中文异常或乱码：先保留首个错误和日志。不要盲改所有文件编码，也不要在压缩软件内部直接运行。
+合成中断：临时输出会尽量清理，完整原版不改；异常崩溃留下.partial或.install.lock时，先确认没有安装进程，之后再手动处理这些临时文件。
+运行前关掉旧游戏实例再选择新ISO，用游戏内存档恢复。旧即时状态会携带旧代码和字库。
+</pre><h2>三平台使用说明</h2><pre>PC、Android 和 PS2 实机使用说明
+本游戏是PS2日版SLPS-25007。先得到通过校验的0.3.2-fix.1 ISO，运行内容相同，各平台入口不同。
+
+PC
+完整解压本包，用对应系统入口生成ISO，再在你已配置好的PS2模拟器中添加ISO所在目录并重新扫描。
+选择新版ISO冷启动，记忆卡继续沿用；本包不包含模拟器/BIOS，不替换手柄或私人配置。
+
+Android 有电脑
+在电脑完成修补和SHA256校验；把完整ISO传到手机可访问的游戏目录；让你现有PS2模拟器通过系统文件选择器添加该目录，再扫描启动。
+按键和性能按你原来已能运行日文版的配置使用。桌面runtime不能放到安卓当解释器运行。
+
+Android 只有手机
+本包 standard-xdelta/AC2_JP_to_CHS_0.3.2-fix.1.xdelta 是标准VCDIFF补丁，仅用于匹配日文原版ISO。
+可用明确支持XDelta的现成修补器选择三个位置：原版ISO、上述.xdelta、新输出ISO。UniPatcher官方项目说明支持XDelta：https://github.com/btimofeev/UniPatcher 。这仅说明格式能力，没有本项目对4.38GB ISO的手机安装测试；工具的版本、文件选择权限、空间和大文件限制仍需确认。
+完成后核对输出SHA256：2a59f11c08856f3c905c6af536f661823497ebc9fac636d37a4582efe9b65b25 。不能因显示“完成”便省去校验。
+无法处理大文件时，使用电脑合成再传入，或使用已验证的完整汉化镜像。不要用ZIP、update.bin或manifest.json直接当游戏导入。
+本包没有要求使用旧的自制Android更新APK。
+
+PS2 实机
+先合成并校验ISO，保留原版/旧版及记忆卡或VMC。再按已配置好的OPL和介质方式安装。
+USB/MX4SIO：用明确支持exFAT的OPL版本时，可把ISO放入其DVD目录；具体命名按你的OPL设置。例如 SLPS_250.07.AC2_CHS_0.3.2-fix.1.iso。
+FAT32：本ISO超过4GiB，不能直接复制。需用你已验证的USBExtreme工具转换（如OPLUtil/USBUtil），普通文件切片或7z分卷不等同USBExtreme格式。
+SMB：按已有共享目录的DVD结构部署完整ISO；修改版本只替换对应游戏，不删除VMC、CFG或其他游戏。
+内置HDD：按已有APA/HDLoader安装流程和工具导入；不能把ZIP当作HDD游戏包。
+OPL官方说明支持介质和大文件方式：https://github.com/ps2homebrew/Open-PS2-Loader 。其README在2026-10-10核查说明USB/MX4SIO/iLink的exFAT从v1.2.0 beta rev1880支持，FAT32超过4GB用USBExtreme。须核对自己实际版本，不为汉化盲目格式化现有盘。
+本版尚未进行PS2硬件或Android游戏内验证。也不把PS2 ISO当作PS3/PSP原生游戏。
+</pre></html>

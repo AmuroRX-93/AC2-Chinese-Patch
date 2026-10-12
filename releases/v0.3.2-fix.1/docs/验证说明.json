@@ -1,0 +1,30 @@
+{
+  "version": "0.3.2-fix.1",
+  "source": {
+    "size": 4380393472,
+    "sha256": "fa1460abc92aa89db1806235620251f9b4cdb00a825cc0fadb36342601d088bc"
+  },
+  "target": {
+    "size": 4380393472,
+    "sha256": "2a59f11c08856f3c905c6af536f661823497ebc9fac636d37a4582efe9b65b25",
+    "name": "AC2_CHS_0.3.2-fix.1_TrueAnalogs.iso"
+  },
+  "full_original_reconstruction": {
+    "bundled_macos_arm64_python": true,
+    "standard_vcdiff": true
+  },
+  "installer_protection_checks": 13,
+  "runtime_platforms": [
+    "windows-x64",
+    "windows-arm64",
+    "macos-arm64",
+    "macos-x64",
+    "linux-x64",
+    "linux-arm64"
+  ],
+  "runtime_game_scope": "用户当前安装版设置菜单反馈；五剧情影片未逐一完整验收",
+  "other_platforms_execution_verified": false,
+  "texture_offset_included": false,
+  "title_original": true,
+  "standard_xdelta_sha256": "6a40be3aa224998fc9621dc75f3f36f7f155732ee8de55d79a2b15cd708bacaa"
+}
